@@ -394,7 +394,7 @@ void TFTView_320x240::init_screens(void)
                             _("Client\nClient Mute\nTracker\nSensor\nTAK\nClient Hidden\nLost & Found\nTAK Tracker"));
 #endif
 
-#ifdef HAS_SDCARD
+#if defined(HAS_SDCARD ) || defined (HAS_SD_MMC)
     lv_obj_clear_flag(objects.basic_settings_backup_restore_button, LV_OBJ_FLAG_HIDDEN);
 #endif
 
@@ -7151,7 +7151,7 @@ bool TFTView_320x240::updateSDCard(void)
         delete sdCard;
         sdCard = nullptr;
     }
-#ifdef HAS_SDCARD
+#if defined(HAS_SDCARD) || defined(HAS_SD_MMC)
     char buf[64];
 #ifdef HAS_SD_MMC
     sdCard = new SDCard;
@@ -7243,7 +7243,7 @@ void TFTView_320x240::formatSDCard(void)
         delete sdCard;
         sdCard = nullptr;
     }
-#ifdef HAS_SDCARD
+#if defined(HAS_SDCARD) || defined(HAS_SD_MMC)
 #ifdef HAS_SD_MMC
     sdCard = new SDCard;
 #else

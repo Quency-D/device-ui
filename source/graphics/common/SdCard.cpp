@@ -71,7 +71,7 @@ bool SDCard::init(void)
     //     SDFs.setPins(SDMMC_CLK, SDMMC_CMD, SDMMC_D0, SDMMC_D1, SDMMC_D2, SDMMC_D3);
     //     return SDFs.begin("/sdcard", false);
     // #else
-    SDFs.setPins(SD_SCLK_PIN, SD_MOSI_PIN, SD_MISO_PIN);
+    SDFs.setPins(SDMMC_CLK, SDMMC_CMD, SDMMC_D0);
     return SDFs.begin("/sdcard", true);
     // #endif
 }
